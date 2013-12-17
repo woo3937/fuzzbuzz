@@ -6,5 +6,5 @@
 int main() {
 	FuzzBuzz fbuzz;	// declare a FuzzBuzz object
 
-	FuzzBuzz.load("../")
+	fbuzz.load("sample-input-file.txt");
 }
