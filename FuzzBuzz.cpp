@@ -13,19 +13,23 @@ int FuzzBuzz::score(std::string input, int libString) {
 }
 
 int FuzzBuzz::scoreBuzzword(std::string input, int libString) {
-	return 0;
+	double percentage;
+	return (int)(percentage * DEFAULT_BUZZWORD_WEIGHT);
 }
 
 int FuzzBuzz::scoreStandard(std::string input, int libString) {
-	return 0;
+	double percentage;
+	return (int)(percentage * DEFAULT_STANDARD_WEIGHT);
 }
 
 int FuzzBuzz::scoreBookend(std::string input, int libString) {
-	return 0;
+	double percentage;
+	return (int)(percentage * DEFAULT_BOOKEND_WEIGHT);
 }
 
 int FuzzBuzz::scoreOrder(std::string input, int libString) {
-	return 0;
+	double percentage;
+	return (int)(percentage * DEFAULT_ORDER_WEIGHT);
 }
 
 FuzzBuzz::FuzzBuzz() {
