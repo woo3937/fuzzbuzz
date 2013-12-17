@@ -36,6 +36,7 @@ private:
 	int scoreStandard(std::string input, int libString);
 	int scoreBookend(std::string input, int libString);
 	int scoreOrder(std::string input, int libString);
+	std::vector<std::string> getWords(int libString);
 };
 
 #endif // FUZZBUZZ_
