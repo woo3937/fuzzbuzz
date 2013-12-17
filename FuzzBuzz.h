@@ -31,12 +31,11 @@ private:
 	int standardWeight;
 	int bookendWeight;
 	int orderWeight;
-	int score(std::string input, int libString);
-	int scoreBuzzword(std::string input, int libString);
-	int scoreStandard(std::string input, int libString);
-	int scoreBookend(std::string input, int libString);
-	int scoreOrder(std::string input, int libString);
-	std::vector<std::string> getWords(int libString);
+	int score(std::string input, int str);
+	int scoreBuzzword(std::string input, int str);
+	int scoreStandard(std::string input, int str);
+	int scoreBookend(std::string input, int str);
+	int scoreOrder(std::string input, int str);
 };
 
 #endif // FUZZBUZZ_
