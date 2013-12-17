@@ -25,13 +25,17 @@ public:
 	void add(std::string str);
 	void remove(std::string str);
 	std::string search(std::string input);
-	int score(std::string input);
 private:
 	std::vector<std::string> libraryStrings;
 	int buzzwordWeight;
 	int standardWeight;
 	int bookendWeight;
 	int orderWeight;
+	int score(std::string input, int libString);
+	int scoreBuzzword(std::string input, int libString);
+	int scoreStandard(std::string input, int libString);
+	int scoreBookend(std::string input, int libString);
+	int scoreOrder(std::string input, int libString);
 };
 
 #endif // FUZZBUZZ_

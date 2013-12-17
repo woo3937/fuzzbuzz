@@ -5,6 +5,29 @@
 
 #include <iostream>
 
+int FuzzBuzz::score(std::string input, int libString) {
+	return	scoreBuzzword(input, libString) +
+			scoreStandard(input, libString) +
+			scoreBookend(input, libString) +
+			scoreOrder(input, libString);
+}
+
+int FuzzBuzz::scoreBuzzword(std::string input, int libString) {
+	return 0;
+}
+
+int FuzzBuzz::scoreStandard(std::string input, int libString) {
+	return 0;
+}
+
+int FuzzBuzz::scoreBookend(std::string input, int libString) {
+	return 0;
+}
+
+int FuzzBuzz::scoreOrder(std::string input, int libString) {
+	return 0;
+}
+
 FuzzBuzz::FuzzBuzz() {
 	buzzwordWeight = DEFAULT_BUZZWORD_WEIGHT;
 	standardWeight = DEFAULT_STANDARD_WEIGHT;
@@ -19,14 +42,18 @@ int FuzzBuzz::load(std::string filename) {
 	while(std::getline(loadFile, dummy))
 		++numEntries;
 	libraryStrings.resize(numEntries+EXTRA_ENTRY_BUFFER); // allow some extra space for added entries
-	std::cout << libraryStrings.size() << " entries." << std::endl; // DEBUG
+	loadFile.clear();
+	loadFile.seekg(0);
 	for(i = 0; i < numEntries; i++) {
 		getline(loadFile, readIn, '\n');
-		libraryStrings[i] = dummy;
-		std::cout << "entry: " << readIn << std::endl;
-	} 
-	for(i = 0; i < numEntries; i++)	// DEBUG
+		libraryStrings[i] = readIn;
+	}
+	/*
+	std::cout << libraryStrings.size() << " entries." << std::endl; // DEBUG
+
+	for(i = 0; i < libraryStrings.size(); i++)	// DEBUG
 		std::cout << "\"" << libraryStrings[i] << "\"" << std::endl;
+	*/
 	return numEntries+EXTRA_ENTRY_BUFFER;
 }
 
@@ -46,9 +73,5 @@ void FuzzBuzz::remove(std::string str) {
 }
 
 std::string FuzzBuzz::search(std::string input) {
-
-}
-
-int FuzzBuzz::score(std::string input) {
 
 }

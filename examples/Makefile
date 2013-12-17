@@ -1,5 +1,5 @@
 CC = g++
-FILES = example.cpp FuzzBuzz.h FuzzBuzz.cpp
+FILES = example.cpp ../FuzzBuzz.h ../FuzzBuzz.cpp
 OUTPUT = example
 
 jarvis: $(FILES)
