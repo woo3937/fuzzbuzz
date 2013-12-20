@@ -5,12 +5,10 @@
 #include <vector>
 
 /* Default Scoring Weights - These should add up to 100. */
-#define DEFAULT_BUZZWORD_WEIGHT 50		// total possible points earned for buzzword presence
-#define DEFAULT_STANDARD_WEIGHT 30		// total possible points earned for non-buzzword (and non-bookend) presence
-#define DEFAULT_BOOKEND_WEIGHT 5		// total possible points earned for non-keyword leading and trailing words
+#define DEFAULT_BUZZWORD_WEIGHT 20		// total possible points earned for buzzword presence
+#define DEFAULT_STANDARD_WEIGHT 60		// total possible points earned for word presence
+#define DEFAULT_BOOKEND_WEIGHT 5		// total possible points earned for  leading and trailing words
 #define DEFAULT_ORDER_WEIGHT 15			// total possible points earned for word ordering
-
-#define EXTRA_ENTRY_BUFFER 10			// extra space in libraryStrings vector to minimize resizing
 
 class FuzzPair {
 	std::string str;
@@ -24,6 +22,7 @@ public:
 	void config(int buzzwordW, int standardW, int bookendW, int orderW);
 	void add(std::string str);
 	void remove(std::string str);
+	std::string best(std::string input);
 	std::string search(std::string input);
 private:
 	std::vector<std::string> libraryStrings;
